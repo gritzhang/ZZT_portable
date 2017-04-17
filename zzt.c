@@ -2,15 +2,15 @@
 
 void Charge_Sta_IO_Init(void )
 {
-    /*ÉèÖÃ³äµç×´Ì¬IOÎªÊäÈë×´Ì¬*/  
+    /*è®¾ç½®å……ç”µçŠ¶æ€IOä¸ºè¾“å…¥çŠ¶æ€*/  
     GPIO_InitTypeDef  GPIO_InitStructure;
 
-    RCC_APB2PeriphClockCmd(Charge_Sta_IO_Clk, ENABLE);	 //Ê¹ÄÜ¶Ë¿ÚÊ±ÖÓ
+    RCC_APB2PeriphClockCmd(Charge_Sta_IO_Clk, ENABLE);	 //ä½¿èƒ½ç«¯å£æ—¶é’Ÿ
 
-    GPIO_InitStructure.GPIO_Pin = Charge_Sta_IO_PG | Charge_Sta_IO_STAT1 | Charge_Sta_IO_STAT2;				 // ¶Ë¿ÚÅäÖÃ
+    GPIO_InitStructure.GPIO_Pin = Charge_Sta_IO_PG | Charge_Sta_IO_STAT1 | Charge_Sta_IO_STAT2;				 // ç«¯å£é…ç½®
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; 		 //
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO¿ÚËÙ¶ÈÎª50MHz
-    GPIO_Init(Charge_Sta_IO_Part, &GPIO_InitStructure);					 //¸ù¾İÉè¶¨²ÎÊı³õÊ¼»¯GPIOB.5
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IOå£é€Ÿåº¦ä¸º50MHz
+    GPIO_Init(Charge_Sta_IO_Part, &GPIO_InitStructure);					 //æ ¹æ®è®¾å®šå‚æ•°åˆå§‹åŒ–GPIOB.5
 }
                        
 void Flash_Init( void )
@@ -20,8 +20,8 @@ void Flash_Init( void )
 }
 void Power_Check_Init(void)
 {
-    Adc_Init();
-    Adc_Start();
+    Adc_PC_Init();
+    Adc_PC_Start();
     //Power_Value = F(ADC_Value)
 }
 void Sound_Wave_Out_Init(void)
@@ -32,7 +32,6 @@ void Sound_Wave_Out_Init(void)
 }
 void Touch_Panel_Init(void)
 {
-    I2C_Init();
     I2C_TP_Init();
 }
 void LCD_Drever_Init(void)
